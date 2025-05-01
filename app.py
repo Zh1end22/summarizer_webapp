@@ -12,13 +12,13 @@ def home():
 def summarize():
     user_input = request.form['text']
 
-    # Save input to a temp file
+    # Save input to a temp file (optional if not used by C)
     with open('input.txt', 'w') as f:
         f.write(user_input)
 
-    # Run the C executable with redirected input
+    # Run the Linux-compatible executable
     result = subprocess.run(
-        [".\summarizer.exe"],
+        ["./summarizer"],
         input=user_input.encode(),
         capture_output=True
     )
