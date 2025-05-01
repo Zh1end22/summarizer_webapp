@@ -18,7 +18,7 @@ def summarize():
 
     # Run the C executable with redirected input
     result = subprocess.run(
-        ["summarizer.exe"],
+        [".\summarizer.exe"],
         input=user_input.encode(),
         capture_output=True
     )
